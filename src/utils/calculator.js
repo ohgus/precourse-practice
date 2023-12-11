@@ -1,4 +1,4 @@
-import { MENU } from "../constants/eventInfo.js";
+import { MENU } from "../constants/orderInfo.js";
 
 const calculator = {
   calculateTotalPrice(input) {

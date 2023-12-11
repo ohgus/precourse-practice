@@ -1,5 +1,5 @@
 import { ERROR, REGEX } from "../constants/error.js";
-import { DATE, ORDER, MENU, CATEGORIES } from "../constants/eventInfo.js";
+import { DATE, ORDER, MENU, CATEGORIES } from "../constants/orderInfo.js";
 
 const validator = {
   validateDate(input) {
