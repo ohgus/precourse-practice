@@ -1,5 +1,15 @@
+import Planner from "./Planner.js";
+
 class App {
-  async run() {}
+  #planner;
+
+  constructor() {
+    this.#planner = new Planner();
+  }
+
+  async run() {
+    await this.#planner.start();
+  }
 }
 
 export default App;
