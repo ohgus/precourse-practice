@@ -11,5 +11,7 @@ export const MESSAGE = Object.freeze({
     start: "안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.",
     quantity: "개",
     orederMenu: "<주문 메뉴>",
+    priceBeforeDiscount: "<할인 전 총주문 금액>",
+    moneyType: "원",
   },
 });

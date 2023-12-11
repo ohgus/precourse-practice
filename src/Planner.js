@@ -13,6 +13,8 @@ class Planner {
     this.#date = await InputView.getDate();
     this.#orders = await InputView.getOrder();
     this.#totalPrice = calculator.calculateTotalPrice(this.#orders);
+
+    OutputView.printPriceBeforeDiscount(this.#totalPrice);
   }
 }
 

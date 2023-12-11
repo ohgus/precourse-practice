@@ -15,7 +15,11 @@ const OutputView = {
       Console.print(`${name} ${quantity}${MESSAGE.print.quantity}`);
     });
   },
-  // ...
+
+  printPriceBeforeDiscount(price) {
+    Console.print(MESSAGE.print.priceBeforeDiscount);
+    Console.print(`${price.toLocaleString()}${MESSAGE.print.moneyType}`);
+  },
 };
 
 export default OutputView;
