@@ -9,9 +9,14 @@ const InputView = {
   },
 
   async getDate() {
-    const input = await this.readDate();
-    validator.validateDate(input);
-    return input;
+    try {
+      const input = await this.readDate();
+      validator.validateDate(input);
+      return input;
+    } catch (e) {
+      Console.print(e.message);
+      return await this.getDate();
+    }
   },
 
   async readOrder() {
@@ -20,9 +25,14 @@ const InputView = {
   },
 
   async getOrder() {
-    const input = await this.readOrder();
-    validator.validateOrders(input);
-    return input;
+    try {
+      const input = await this.readOrder();
+      validator.validateOrders(input);
+      return input;
+    } catch (e) {
+      Console.print(e.message);
+      return await this.getOrder();
+    }
   },
 };
 
