@@ -6,6 +6,12 @@ const OutputView = {
     Console.print(MESSAGE.print.start);
   },
 
+  printEventPreviewMessage(date) {
+    Console.print(
+      `${MESSAGE.print.month} ${date}${MESSAGE.print.eventPreview}`
+    );
+  },
+
   printMenu(input) {
     const orders = input.split(",");
     Console.print(MESSAGE.print.orederMenu);

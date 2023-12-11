@@ -14,6 +14,7 @@ class Planner {
     this.#orders = await InputView.getOrder();
     this.#totalPrice = calculator.calculateTotalPrice(this.#orders);
 
+    OutputView.printEventPreviewMessage(this.#date);
     OutputView.printMenu(this.#orders);
     OutputView.printPriceBeforeDiscount(this.#totalPrice);
   }
