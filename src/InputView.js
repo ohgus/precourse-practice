@@ -21,7 +21,7 @@ const InputView = {
 
   async getOrder() {
     const input = await this.readOrder();
-    // 예외처리 부분
+    validator.validateOrders(input);
     return input;
   },
 };
