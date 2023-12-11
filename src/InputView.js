@@ -1,5 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
 import { MESSAGE } from "./constants/messages.js";
+import validator from "./validator/validator.js";
 
 const InputView = {
   async readDate() {
@@ -9,7 +10,7 @@ const InputView = {
 
   async getDate() {
     const input = await this.readDate();
-    // 예외처리 부분
+    validator.validateDate(input);
     return input;
   },
 
