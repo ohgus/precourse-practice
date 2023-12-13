@@ -13,7 +13,7 @@ class Event {
       this.#event.push(EVENT_INFO.dDay.name);
     }
     if (this.#checkWeekday(date, orders)) {
-      this.#event.push(EVENT_INFO.weekday);
+      this.#event.push(EVENT_INFO.weekday.name);
     }
     if (this.#checkWeekend(date, orders)) {
       this.#event.push(EVENT_INFO.weekend.name);
