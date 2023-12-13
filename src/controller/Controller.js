@@ -87,6 +87,7 @@ class Controller {
       this.#discount.getDiscount(),
       this.#event.getEvent()
     );
+    OutputView.printBadge(this.#discount.getDiscount(), this.#event.getEvent());
   }
 }
 

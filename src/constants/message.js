@@ -28,6 +28,20 @@ export const MESSAGE = Object.freeze({
     afterDiscount: {
       title: "\n<할인 후 예상 결제 금액>",
     },
+    badge: {
+      title: "\n<12월 이벤트 배지>",
+      level: {
+        one: 5000,
+        two: 10000,
+        three: 20000,
+      },
+      name: {
+        none: "없음",
+        star: "별",
+        tree: "트리",
+        santa: "산타",
+      },
+    },
   },
 
   error: {

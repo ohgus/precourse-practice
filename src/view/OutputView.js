@@ -73,6 +73,21 @@ const OutputView = {
     }
   },
 
+  printBadge(discountPrice, event) {
+    Console.print(MESSAGE.print.badge.title);
+    if (event.length === 0 || discountPrice < MESSAGE.print.badge.level.one) {
+      Console.print(MESSAGE.print.badge.name.none);
+    } else {
+      if (discountPrice >= MESSAGE.print.badge.level.three) {
+        Console.print(MESSAGE.print.badge.name.santa);
+      } else if (discountPrice >= MESSAGE.print.badge.level.two) {
+        Console.print(MESSAGE.print.badge.name.tree);
+      } else if (discountPrice >= MESSAGE.print.badge.level.one) {
+        Console.print(MESSAGE.print.badge.name.star);
+      }
+    }
+  },
+
   printError(error) {
     Console.print(error);
   },
