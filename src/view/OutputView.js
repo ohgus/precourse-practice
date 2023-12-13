@@ -49,6 +49,15 @@ const OutputView = {
     }
   },
 
+  printDiscountPrice(discountPrice, event) {
+    Console.print(MESSAGE.print.discountPrice.title);
+    if (event.length === 0) {
+      Console.print(MESSAGE.print.discountPrice.zero);
+    } else {
+      Console.print(`-${discountPrice.toLocaleString()}${UNIT.money}`);
+    }
+  },
+
   printError(error) {
     Console.print(error);
   },

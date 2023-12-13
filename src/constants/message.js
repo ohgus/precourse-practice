@@ -21,6 +21,10 @@ export const MESSAGE = Object.freeze({
       minus: "-",
       none: "없음",
     },
+    discountPrice: {
+      title: "\n<총혜택 금액>",
+      zero: "0원",
+    },
   },
 
   error: {

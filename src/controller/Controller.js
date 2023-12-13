@@ -78,6 +78,10 @@ class Controller {
       this.#event.getEvent(),
       this.#discount.getEventDiscount()
     );
+    OutputView.printDiscountPrice(
+      this.#discount.getDiscount(),
+      this.#event.getEvent()
+    );
   }
 }
 
