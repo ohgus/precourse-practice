@@ -29,6 +29,18 @@ class Order {
 
     return price;
   }
+
+  getDate() {
+    return this.#date;
+  }
+
+  getOrderMenu() {
+    return this.#orderMenu;
+  }
+
+  getPrice() {
+    return this.#price;
+  }
 }
 
 export default Order;
