@@ -34,6 +34,21 @@ const OutputView = {
     }
   },
 
+  printMyEvent(event, eventDiscount) {
+    Console.print(MESSAGE.print.myEvent.title);
+    if (event.length === 0) {
+      Console.print(MESSAGE.print.myEvent.none);
+    } else {
+      for (let event in eventDiscount) {
+        Console.print(
+          `${event}: ${MESSAGE.print.myEvent.minus}${eventDiscount[
+            event
+          ].toLocaleString()}${UNIT.money}`
+        );
+      }
+    }
+  },
+
   printError(error) {
     Console.print(error);
   },

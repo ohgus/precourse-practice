@@ -16,6 +16,11 @@ export const MESSAGE = Object.freeze({
       none: "없음",
       have: "샴페인 1개",
     },
+    myEvent: {
+      title: "\n<혜택 내역>",
+      minus: "-",
+      none: "없음",
+    },
   },
 
   error: {
