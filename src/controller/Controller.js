@@ -19,8 +19,8 @@ class Controller {
   async #readVisitDate() {
     try {
       const date = await InputView.readDate();
-      this.#order.setDate(date);
       validator.validateDate(date);
+      this.#order.setDate(date);
     } catch (error) {
       OutputView.printError(error.message);
       return await this.#readVisitDate();
