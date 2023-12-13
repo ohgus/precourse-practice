@@ -65,6 +65,13 @@ class Controller {
       this.#order.getDate(),
       this.#order.getOrderMenu()
     );
+
+    this.#printPlanningResult();
+  }
+
+  #printPlanningResult() {
+    OutputView.printPreviewMessage(this.#order.getDate());
+    OutputView.printMenu(this.#order.getOrderMenu());
   }
 }
 

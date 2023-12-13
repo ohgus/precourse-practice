@@ -15,6 +15,10 @@ const OutputView = {
     });
   },
 
+  printPreviewMessage(date) {
+    Console.print(MESSAGE.print.preview(date));
+  },
+
   printError(error) {
     Console.print(error);
   },
