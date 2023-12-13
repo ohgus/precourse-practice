@@ -25,6 +25,9 @@ export const MESSAGE = Object.freeze({
       title: "\n<총혜택 금액>",
       zero: "0원",
     },
+    afterDiscount: {
+      title: "\n<할인 후 예상 결제 금액>",
+    },
   },
 
   error: {

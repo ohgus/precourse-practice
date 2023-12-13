@@ -58,6 +58,21 @@ const OutputView = {
     }
   },
 
+  printAfterDiscount(price, discountPrice, event) {
+    Console.print(MESSAGE.print.afterDiscount.title);
+    if (event.length === 0) {
+      Console.print(`${price.toLocaleString()}${UNIT.money}`);
+    } else {
+      let totalPrice = price - discountPrice;
+      if (event.includes(EVENT_INFO.gift.name)) {
+        totalPrice += EVENT_INFO.gift.giftAmount;
+        Console.print(`${totalPrice.toLocaleString()}${UNIT.money}`);
+      } else {
+        Console.print(`${totalPrice.toLocaleString()}${UNIT.money}`);
+      }
+    }
+  },
+
   printError(error) {
     Console.print(error);
   },

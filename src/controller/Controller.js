@@ -82,6 +82,11 @@ class Controller {
       this.#discount.getDiscount(),
       this.#event.getEvent()
     );
+    OutputView.printAfterDiscount(
+      this.#order.getPrice(),
+      this.#discount.getDiscount(),
+      this.#event.getEvent()
+    );
   }
 }
 
