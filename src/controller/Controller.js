@@ -34,6 +34,7 @@ class Controller {
     try {
       const orders = await InputView.readOrder();
       this.#order.setOrderMenu(orders);
+      this.#validator.validateOrder(orders);
     } catch (error) {
       OutputView.printError(error.message);
       return await this.#readOrderMenu();

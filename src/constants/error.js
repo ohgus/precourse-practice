@@ -6,4 +6,9 @@ export const ERROR = Object.freeze({
       end: 31,
     },
   },
+
+  order: {
+    regex: /^(?:[1-9]|1\d|20)$/,
+    max: 20,
+  },
 });
