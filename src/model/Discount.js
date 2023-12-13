@@ -3,9 +3,11 @@ import { EVENT_INFO } from "../constants/event.js";
 
 class Discount {
   #discountPrice;
+  #eventDiscount;
 
   constructor() {
     this.#discountPrice = 0;
+    this.#eventDiscount = {};
   }
 
   setDiscountPrice(event, date, orders) {
@@ -21,13 +23,21 @@ class Discount {
     return this.#discountPrice;
   }
 
+  getEventDiscount() {
+    return this.#eventDiscount;
+  }
+
   #calculateDday(date) {
-    this.#discountPrice +=
+    const discount =
       EVENT_INFO.dDay.baseAmount + (Number(date) - 1) * EVENT_INFO.dDay.upUnit;
+    this.#discountPrice += discount;
+    this.#eventDiscount[EVENT_INFO.dDay.name] = discount;
   }
 
   #calculateSpecial() {
-    this.#discountPrice += EVENT_INFO.special.baseAmount;
+    const discount = EVENT_INFO.special.baseAmount;
+    this.#discountPrice += discount;
+    this.#eventDiscount[EVENT_INFO.special.name] = discount;
   }
 
   #calculateWeekday(orders) {
@@ -38,8 +48,9 @@ class Discount {
         dessertCount += 1;
       }
     });
-
-    this.#discountPrice += dessertCount * EVENT_INFO.weekday.baseAmount;
+    const discount = dessertCount * EVENT_INFO.weekday.baseAmount;
+    this.#discountPrice += discount;
+    this.#eventDiscount[EVENT_INFO.weekday.name] = discount;
   }
 
   #calculateWeekend(orders) {
@@ -51,11 +62,15 @@ class Discount {
       }
     });
 
-    this.#discountPrice += mainCount * EVENT_INFO.weekend.baseAmount;
+    const discount = mainCount * EVENT_INFO.weekend.baseAmount;
+    this.#discountPrice += discount;
+    this.#eventDiscount[EVENT_INFO.weekend.name] = discount;
   }
 
   #calculateGift() {
-    this.#discountPrice += EVENT_INFO.gift.giftAmount;
+    const discount = EVENT_INFO.gift.giftAmount;
+    this.#discountPrice += discount;
+    this.#eventDiscount[EVENT_INFO.gift.name] = discount;
   }
 }
 
