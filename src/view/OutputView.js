@@ -14,7 +14,10 @@ const OutputView = {
       Console.print(`${menu} ${quantity}${UNIT.menu}`);
     });
   },
-  // ...
+
+  printError(error) {
+    Console.print(error);
+  },
 };
 
 export default OutputView;
