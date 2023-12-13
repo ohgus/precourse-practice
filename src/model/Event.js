@@ -9,20 +9,24 @@ class Event {
   }
 
   setEvent(price, date, orders) {
-    if (this.#checkDDay(date)) {
-      this.#event.push(EVENT_INFO.dDay.name);
-    }
-    if (this.#checkWeekday(date, orders)) {
-      this.#event.push(EVENT_INFO.weekday.name);
-    }
-    if (this.#checkWeekend(date, orders)) {
-      this.#event.push(EVENT_INFO.weekend.name);
-    }
-    if (this.#checkSpecial(date)) {
-      this.#event.push(EVENT_INFO.special.name);
-    }
-    if (this.#checkGift(price)) {
-      this.#event.push(EVENT_INFO.gift.name);
+    if (price >= 1000) {
+      if (this.#checkDDay(date)) {
+        this.#event.push(EVENT_INFO.dDay.name);
+      }
+      if (this.#checkWeekday(date, orders)) {
+        this.#event.push(EVENT_INFO.weekday.name);
+      }
+      if (this.#checkWeekend(date, orders)) {
+        this.#event.push(EVENT_INFO.weekend.name);
+      }
+      if (this.#checkSpecial(date)) {
+        this.#event.push(EVENT_INFO.special.name);
+      }
+      if (this.#checkGift(price)) {
+        this.#event.push(EVENT_INFO.gift.name);
+      }
+    } else {
+      this.#event = [];
     }
   }
 
