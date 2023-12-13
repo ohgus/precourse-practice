@@ -9,7 +9,7 @@ class Event {
   }
 
   setEvent(price, date, orders) {
-    if (price >= 1000) {
+    if (price >= 10000) {
       if (this.#checkDDay(date)) {
         this.#event.push(EVENT_INFO.dDay.name);
       }
