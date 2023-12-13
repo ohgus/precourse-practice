@@ -35,6 +35,7 @@ class Controller {
       const orders = await InputView.readOrder();
       this.#validator.validateOrder(orders);
       this.#order.setOrderMenu(orders);
+      this.#order.setPrice(orders);
     } catch (error) {
       OutputView.printError(error.message);
       return await this.#readOrderMenu();
