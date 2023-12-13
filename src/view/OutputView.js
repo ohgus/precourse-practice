@@ -3,6 +3,10 @@ import { MESSAGE } from "../constants/message.js";
 import { UNIT } from "../constants/unit.js";
 
 const OutputView = {
+  printHello() {
+    Console.print(MESSAGE.print.hello);
+  },
+
   printMenu(orders) {
     Console.print(MESSAGE.print.orderMenu);
     orders.forEach((order) => {
