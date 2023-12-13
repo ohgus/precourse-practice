@@ -17,6 +17,10 @@ class Discount {
     if (event.includes(EVENT_INFO.gift.name)) this.#calculateGift();
   }
 
+  getDiscount() {
+    return this.#discountPrice;
+  }
+
   #calculateDday(date) {
     this.#discountPrice +=
       EVENT_INFO.dDay.baseAmount + (Number(date) - 1) * EVENT_INFO.dDay.upUnit;
