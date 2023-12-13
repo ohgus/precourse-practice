@@ -11,5 +11,13 @@ class Controller {
 
   async start() {
     OutputView.printHello();
+    await this.#readVisitDate();
+  }
+
+  async #readVisitDate() {
+    try {
+      const date = await InputView.readDate();
+      this.#order.setDate(date);
+    } catch (error) {}
   }
 }
