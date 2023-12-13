@@ -43,9 +43,9 @@ class Discount {
   #calculateWeekday(orders) {
     let dessertCount = 0;
     orders.forEach((order) => {
-      const name = order.split("-")[0];
+      const [name, quantity] = order.split("-");
       if (ALL_MENU[name].category === ALL_CATEGORIES.dessert) {
-        dessertCount += 1;
+        dessertCount += Number(quantity);
       }
     });
     const discount = dessertCount * EVENT_INFO.weekday.baseAmount;
@@ -56,9 +56,9 @@ class Discount {
   #calculateWeekend(orders) {
     let mainCount = 0;
     orders.forEach((order) => {
-      const name = order.split("-")[0];
+      const [name, quantity] = order.split("-");
       if (ALL_MENU[name].category === ALL_CATEGORIES.main) {
-        mainCount += 1;
+        mainCount += Number(quantity);
       }
     });
 
