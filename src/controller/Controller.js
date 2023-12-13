@@ -72,6 +72,8 @@ class Controller {
   #printPlanningResult() {
     OutputView.printPreviewMessage(this.#order.getDate());
     OutputView.printMenu(this.#order.getOrderMenu());
+    OutputView.printBeforeDiscount(this.#order.getPrice());
+    OutputView.printGift(this.#event.getEvent());
   }
 }
 
