@@ -38,7 +38,7 @@ export const ALL_MENU = Object.freeze({
     price: 15000,
     category: ALL_CATEGORIES.dessert,
   },
-  아이스크립: {
+  아이스크림: {
     price: 5000,
     category: ALL_CATEGORIES.dessert,
   },
