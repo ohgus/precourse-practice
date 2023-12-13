@@ -55,6 +55,16 @@ class Controller {
       this.#order.getDate(),
       this.#order.getOrderMenu()
     );
+
+    this.#calculateDiscount();
+  }
+
+  #calculateDiscount() {
+    this.#discount.setDiscountPrice(
+      this.#event.getEvent(),
+      this.#order.getDate(),
+      this.#order.getOrderMenu()
+    );
   }
 }
 
