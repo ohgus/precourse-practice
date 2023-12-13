@@ -21,9 +21,20 @@ class Controller {
       const date = await InputView.readDate();
       validator.validateDate(date);
       this.#order.setDate(date);
+      return await this.#readOrderMenu();
     } catch (error) {
       OutputView.printError(error.message);
       return await this.#readVisitDate();
+    }
+  }
+
+  async #readOrderMenu() {
+    try {
+      const orders = await InputView.readOrder();
+      this.#order.setOrderMenu(orders);
+    } catch (error) {
+      OutputView.printError(error.message);
+      return await this.#readOrderMenu();
     }
   }
 }

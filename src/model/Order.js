@@ -8,6 +8,10 @@ class Order {
   setDate(date) {
     this.#date = date;
   }
+
+  setOrderMenu(orders) {
+    this.#orderMenu = orders;
+  }
 }
 
 export default Order;
