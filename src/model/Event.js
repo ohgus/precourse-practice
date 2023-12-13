@@ -26,6 +26,10 @@ class Event {
     }
   }
 
+  getEvent() {
+    return this.#event;
+  }
+
   #checkDDay(date) {
     if (date >= EVENT_INFO.dDay.start && date <= EVENT_INFO.dDay.end) {
       return true;
