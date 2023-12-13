@@ -2,18 +2,21 @@ import OutputView from "../view/OutputView.js";
 import InputView from "../view/InputView.js";
 import Order from "../model/Order.js";
 import Event from "../model/Event.js";
+import Discount from "../model/Discount.js";
 
 import Validator from "../utils/validator.js";
 
 class Controller {
   #order;
   #event;
+  #discount;
   #validator;
 
   constructor() {
     this.#validator = new Validator();
     this.#order = new Order();
     this.#event = new Event();
+    this.#discount = new Discount();
   }
 
   async start() {
