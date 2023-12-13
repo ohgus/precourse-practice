@@ -2,12 +2,14 @@ import OutputView from "../view/OutputView.js";
 import InputView from "../view/InputView.js";
 import Order from "../model/Order.js";
 
-import { validator } from "../utils/validator.js";
+import Validator from "../utils/validator.js";
 
 class Controller {
   #order;
+  #validator;
 
   constructor() {
+    this.#validator = new Validator();
     this.#order = new Order();
   }
 
@@ -19,7 +21,7 @@ class Controller {
   async #readVisitDate() {
     try {
       const date = await InputView.readDate();
-      validator.validateDate(date);
+      this.#validator.validateDate(date);
       this.#order.setDate(date);
       return await this.#readOrderMenu();
     } catch (error) {
