@@ -33,8 +33,8 @@ class Controller {
   async #readOrderMenu() {
     try {
       const orders = await InputView.readOrder();
-      this.#order.setOrderMenu(orders);
       this.#validator.validateOrder(orders);
+      this.#order.setOrderMenu(orders);
     } catch (error) {
       OutputView.printError(error.message);
       return await this.#readOrderMenu();
