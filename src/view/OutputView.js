@@ -1,6 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 import { MESSAGE } from "../constants/message.js";
 import { UNIT } from "../constants/unit.js";
+import { EVENT_INFO } from "../constants/event.js";
 
 const OutputView = {
   printHello() {
@@ -22,6 +23,15 @@ const OutputView = {
   printBeforeDiscount(price) {
     Console.print(MESSAGE.print.beforeDiscount);
     Console.print(`${price.toLocaleString()}${UNIT.money}`);
+  },
+
+  printGift(event) {
+    Console.print(MESSAGE.print.giftTitle);
+    if (event.includes(EVENT_INFO.gift.name)) {
+      Console.print(MESSAGE.print.giftItem.have);
+    } else {
+      Console.print(MESSAGE.print.giftItem.none);
+    }
   },
 
   printError(error) {

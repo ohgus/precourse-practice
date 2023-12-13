@@ -11,6 +11,11 @@ export const MESSAGE = Object.freeze({
     preview: (date) =>
       `12월 ${date}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!`,
     beforeDiscount: "\n<할인 전 총주문 금액>",
+    giftTitle: "\n<증정 메뉴>",
+    giftItem: {
+      none: "없음",
+      have: "샴페인 1개",
+    },
   },
 
   error: {
