@@ -10,6 +10,7 @@ export const MESSAGE = Object.freeze({
     orderMenu: "\n<주문 메뉴>",
     preview: (date) =>
       `12월 ${date}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!`,
+    beforeDiscount: "\n<할인 전 총주문 금액>",
   },
 
   error: {

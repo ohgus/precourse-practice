@@ -19,6 +19,11 @@ const OutputView = {
     Console.print(MESSAGE.print.preview(date));
   },
 
+  printBeforeDiscount(price) {
+    Console.print(MESSAGE.print.beforeDiscount);
+    Console.print(`${price.toLocaleString()}${UNIT.money}`);
+  },
+
   printError(error) {
     Console.print(error);
   },
