@@ -55,6 +55,11 @@ const OutputView = {
     }
   },
 
+  printDiscount(discount) {
+    Console.print(OUTPUT_MESSAGE.discountTitle);
+    Console.print(OUTPUT_MESSAGE.discount(discount));
+  },
+
   printError(error) {
     Console.print(error);
   },
