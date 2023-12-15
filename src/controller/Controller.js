@@ -18,32 +18,34 @@ class Controller {
 
   async start() {
     OutputView.printStart();
-    await this.#getDateInput();
+    await this.#setDateInput();
+    await this.#setOrderInput();
+    this.#setEventInfo(
+      this.#orderInfo.getCategoryCount(),
+      this.#orderInfo.getPrice(),
+      this.#visitDate
+    );
+    this.#setBadge(this.#myEventInfo.getDiscount());
+    this.#showResult();
   }
 
-  async #getDateInput() {
+  async #setDateInput() {
     try {
       const date = await InputView.readDate();
       this.#visitDate = new Callender(date).getVisitDate();
-      return await this.#getOrderInput();
     } catch (error) {
       OutputView.printError(error.message);
-      return await this.#getDateInput();
+      return await this.#setDateInput();
     }
   }
 
-  async #getOrderInput() {
+  async #setOrderInput() {
     try {
       const orderInput = await InputView.readOrders();
       this.#orderInfo = new Order(orderInput);
-      return this.#setEventInfo(
-        this.#orderInfo.getCategoryCount(),
-        this.#orderInfo.getPrice(),
-        this.#visitDate
-      );
     } catch (error) {
       OutputView.printError(error.message);
-      return await this.#getOrderInput();
+      return await this.#setOrderInput();
     }
   }
 
