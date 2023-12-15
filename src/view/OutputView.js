@@ -1,6 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
 import { OUTPUT_MESSAGE } from "../constants/output.js";
-import { ALL_EVENT } from "../constants/event.js";
+import { ALL_EVENT, EVENT_NAME } from "../constants/event.js";
 
 const OutputView = {
   printStart() {
@@ -30,6 +30,28 @@ const OutputView = {
       Console.print(OUTPUT_MESSAGE.gift);
     } else {
       Console.print(OUTPUT_MESSAGE.noEvent);
+    }
+  },
+
+  printMyEvent(eventDiscount) {
+    Console.print(OUTPUT_MESSAGE.myEventTitle);
+
+    if (eventDiscount === null) {
+      Console.print(OUTPUT_MESSAGE.noEvent);
+    } else {
+      eventDiscount.forEach((discount, index) => {
+        if (discount > 0 && index === ALL_EVENT.dday.index) {
+          Console.print(OUTPUT_MESSAGE.myEvent(discount, EVENT_NAME.dday));
+        } else if (discount > 0 && index === ALL_EVENT.weekday.index) {
+          Console.print(OUTPUT_MESSAGE.myEvent(discount, EVENT_NAME.weekday));
+        } else if (discount > 0 && index === ALL_EVENT.weekend.index) {
+          Console.print(OUTPUT_MESSAGE.myEvent(discount, EVENT_NAME.weekend));
+        } else if (discount > 0 && index === ALL_EVENT.special.index) {
+          Console.print(OUTPUT_MESSAGE.myEvent(discount, EVENT_NAME.special));
+        } else if (discount > 0 && index === ALL_EVENT.gift.index) {
+          Console.print(OUTPUT_MESSAGE.myEvent(discount, EVENT_NAME.gift));
+        }
+      });
     }
   },
 
