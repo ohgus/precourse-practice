@@ -6,9 +6,12 @@ const OutputView = {
     Console.print(OUTPUT_MESSAGE.start);
   },
 
-  printMenu() {
-    Console.print("<주문 메뉴>");
-    // ...
+  printMenu(orders) {
+    Console.print(OUTPUT_MESSAGE.menuTitle);
+    orders.forEach((order) => {
+      const [menu, quantity] = order;
+      Console.print(`${menu} ${quantity}${OUTPUT_MESSAGE.menuUnit}`);
+    });
   },
 
   printError(error) {

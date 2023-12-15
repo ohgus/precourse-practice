@@ -44,6 +44,11 @@ class Controller {
 
   #setEventInfo(category, price, date) {
     this.#myEventInfo = new Event(category, price, date);
+    this.#showResult();
+  }
+
+  #showResult() {
+    OutputView.printMenu(this.#orderInfo.getOrders());
   }
 }
 
