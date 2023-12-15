@@ -10,6 +10,7 @@ const EVENT_NAME = Object.freeze({
 
 const ALL_EVENT = Object.freeze({
   minPrice: 10000,
+  fullDate: (date) => `2023.12.${date}`,
   dday: {
     name: EVENT_NAME.dday,
     basePrice: 1000,

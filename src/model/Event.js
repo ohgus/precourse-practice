@@ -13,7 +13,7 @@ class Event {
   }
 
   #checkMyEvent(category, price, date) {
-    const day = new Date(`2023.12.${date}`).getDay();
+    const day = new Date(ALL_EVENT.fullDate(date)).getDay();
 
     if (price >= ALL_EVENT.minPrice) {
       this.#checkDday(date);
