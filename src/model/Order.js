@@ -9,7 +9,12 @@ class Order {
 
   constructor(input) {
     this.#category = Array.from({ length: 4 }, (value) => 0);
+    this.#price = 0;
     this.#validate(input);
+    this.#calculatePrice(input);
+    this.#orders = input
+      .split(ORDER_OPTION.orderSpliter)
+      .map((order) => order.split(ORDER_OPTION.menuSpliter));
   }
 
   #validate(input) {
@@ -73,8 +78,15 @@ class Order {
       throw new Error(ERROR.message.order);
     }
   }
+
+  #calculatePrice(input) {
+    const orders = input.split(ORDER_OPTION.orderSpliter);
+
+    orders.forEach((order) => {
+      const [menu, quantity] = order.split(ORDER_OPTION.menuSpliter);
+      this.#price += ALL_MENU[menu].price * Number(quantity);
+    });
+  }
 }
 
 export default Order;
-
-new Order("제로콜라-2,레드와인-2,샴페인-1");
