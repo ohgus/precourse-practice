@@ -16,9 +16,8 @@ class Controller {
     try {
       const date = await InputView.readDate();
       this.#visitDate = new Callender(date).getVisitDate();
-      console.log(this.#visitDate);
     } catch (error) {
-      console.log(error.message);
+      OutputView.printError(error.message);
       return await this.#getDateInput();
     }
   }
