@@ -84,6 +84,18 @@ class Event {
       this.#eventDiscount[ALL_EVENT.gift.index] += discount;
     }
   }
+
+  getEvent() {
+    return this.#event;
+  }
+
+  getEventDiscount() {
+    return this.#eventDiscount;
+  }
+
+  getDiscount() {
+    return this.#allDiscount;
+  }
 }
 
 export default Event;
