@@ -75,6 +75,7 @@ class Controller {
       this.#myEventInfo.getDiscount(),
       this.#myEventInfo.getEvent()
     );
+    OutputView.printBadge(this.#badge);
   }
 }
 

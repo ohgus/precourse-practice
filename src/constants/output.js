@@ -15,4 +15,5 @@ export const OUTPUT_MESSAGE = Object.freeze({
   discount: (discount) => `-${discount.toLocaleString()}원`,
   afterDiscountTitle: "\n<할인 후 예상 결제 금액>",
   afterDiscount: (price) => `${price.toLocaleString()}원`,
+  badgeTitle: "\n<12월 이벤트 배지>",
 });

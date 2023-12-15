@@ -79,6 +79,11 @@ const OutputView = {
     }
   },
 
+  printBadge(badge) {
+    Console.print(OUTPUT_MESSAGE.badgeTitle);
+    Console.print(badge);
+  },
+
   printError(error) {
     Console.print(error);
   },
