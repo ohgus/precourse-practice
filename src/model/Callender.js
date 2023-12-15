@@ -13,6 +13,10 @@ class Callender {
       throw new Error(ERROR.message.date);
     }
   }
+
+  getVisitDate() {
+    return this.#date;
+  }
 }
 
 export default Callender;
