@@ -37,9 +37,11 @@ class Event {
       Number(date) >= ALL_EVENT.dday.min &&
       Number(date) <= ALL_EVENT.dday.max
     ) {
-      this.#event[ALL_EVENT.dday.index] = true;
-      this.#eventDiscount[ALL_EVENT.dday.index] +=
+      const discount =
         ALL_EVENT.dday.basePrice + (Number(date) - 1) * ALL_EVENT.dday.upUnit;
+      this.#event[ALL_EVENT.dday.index] = true;
+      this.#eventDiscount[ALL_EVENT.dday.index] += discount;
+      this.#allDiscount += discount;
     }
   }
 
