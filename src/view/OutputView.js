@@ -57,13 +57,20 @@ const OutputView = {
 
   printDiscount(discount) {
     Console.print(OUTPUT_MESSAGE.discountTitle);
-    Console.print(OUTPUT_MESSAGE.discount(discount));
+    if (discount === 0) {
+      Console.print(`${discount}${OUTPUT_MESSAGE.priceUnit}`);
+    } else {
+      Console.print(OUTPUT_MESSAGE.discount(discount));
+    }
   },
 
   printAfterDiscount(price, discount, event) {
     Console.print(OUTPUT_MESSAGE.afterDiscountTitle);
     const finalPrice = price - discount;
-    if (event[ALL_EVENT.gift.index]) {
+
+    if (discount === 0) {
+      Console.print(`${price.toLocaleString()}${OUTPUT_MESSAGE.priceUnit}`);
+    } else if (event[ALL_EVENT.gift.index]) {
       Console.print(
         OUTPUT_MESSAGE.afterDiscount(finalPrice + ALL_EVENT.gift.discount)
       );
