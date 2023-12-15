@@ -1,5 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
 import { OUTPUT_MESSAGE } from "../constants/output.js";
+import { ALL_EVENT } from "../constants/event.js";
 
 const OutputView = {
   printStart() {
@@ -21,6 +22,15 @@ const OutputView = {
   printBeforeDiscount(price) {
     Console.print(OUTPUT_MESSAGE.beforeDiscount);
     Console.print(`${price.toLocaleString()}${OUTPUT_MESSAGE.priceUnit}`);
+  },
+
+  printGift(price) {
+    Console.print(OUTPUT_MESSAGE.giftTitle);
+    if (price >= ALL_EVENT.gift.minPrice) {
+      Console.print(OUTPUT_MESSAGE.gift);
+    } else {
+      Console.print(OUTPUT_MESSAGE.noEvent);
+    }
   },
 
   printError(error) {

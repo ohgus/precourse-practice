@@ -51,6 +51,7 @@ class Controller {
     OutputView.printPreviewMent(this.#visitDate);
     OutputView.printMenu(this.#orderInfo.getOrders());
     OutputView.printBeforeDiscount(this.#orderInfo.getPrice());
+    OutputView.printGift(this.#orderInfo.getPrice());
   }
 }
 
