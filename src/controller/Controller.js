@@ -54,6 +54,11 @@ class Controller {
     OutputView.printGift(this.#orderInfo.getPrice());
     OutputView.printMyEvent(this.#myEventInfo.getEventDiscount());
     OutputView.printDiscount(this.#myEventInfo.getDiscount());
+    OutputView.printAfterDiscount(
+      this.#orderInfo.getPrice(),
+      this.#myEventInfo.getDiscount(),
+      this.#myEventInfo.getEvent()
+    );
   }
 }
 

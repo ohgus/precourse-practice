@@ -13,4 +13,6 @@ export const OUTPUT_MESSAGE = Object.freeze({
   myEvent: (discount, name) => `${name}: -${discount.toLocaleString()}원`,
   discountTitle: "\n<총혜택 금액>",
   discount: (discount) => `-${discount.toLocaleString()}원`,
+  afterDiscountTitle: "\n<할인 후 예상 결제 금액>",
+  afterDiscount: (price) => `${price.toLocaleString()}원`,
 });

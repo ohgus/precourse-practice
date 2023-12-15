@@ -60,6 +60,18 @@ const OutputView = {
     Console.print(OUTPUT_MESSAGE.discount(discount));
   },
 
+  printAfterDiscount(price, discount, event) {
+    Console.print(OUTPUT_MESSAGE.afterDiscountTitle);
+    const finalPrice = price - discount;
+    if (event[ALL_EVENT.gift.index]) {
+      Console.print(
+        OUTPUT_MESSAGE.afterDiscount(finalPrice + ALL_EVENT.gift.discount)
+      );
+    } else {
+      Console.print(OUTPUT_MESSAGE.afterDiscount(finalPrice));
+    }
+  },
+
   printError(error) {
     Console.print(error);
   },
