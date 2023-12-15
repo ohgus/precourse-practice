@@ -48,6 +48,21 @@ const ALL_EVENT = Object.freeze({
     minPrice: 120000,
     index: 4,
   },
+  badge: {
+    default: "없음",
+    santa: {
+      need: 20000,
+      name: "산타",
+    },
+    tree: {
+      need: 10000,
+      name: "트리",
+    },
+    star: {
+      need: 5000,
+      name: "별",
+    },
+  },
 });
 
 export { EVENT_NAME, ALL_EVENT };

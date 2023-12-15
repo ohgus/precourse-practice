@@ -4,12 +4,17 @@ import Callender from "../model/Callender.js";
 import Order from "../model/Order.js";
 import Event from "../model/Event.js";
 
+import { ALL_EVENT } from "../constants/event.js";
+
 class Controller {
   #visitDate;
   #orderInfo;
   #myEventInfo;
+  #badge;
 
-  constructor() {}
+  constructor() {
+    this.#badge = ALL_EVENT.badge.default;
+  }
 
   async start() {
     OutputView.printStart();
@@ -44,7 +49,18 @@ class Controller {
 
   #setEventInfo(category, price, date) {
     this.#myEventInfo = new Event(category, price, date);
+    this.#setBadge(this.#myEventInfo.getDiscount());
     this.#showResult();
+  }
+
+  #setBadge(discount) {
+    if (discount >= ALL_EVENT.badge.santa.need) {
+      this.#badge = ALL_EVENT.badge.santa.name;
+    } else if (discount >= ALL_EVENT.badge.tree.need) {
+      this.#badge = ALL_EVENT.badge.tree.name;
+    } else if (discount >= ALL_EVENT.badge.star.need) {
+      this.#badge = ALL_EVENT.badge.star.name;
+    }
   }
 
   #showResult() {
