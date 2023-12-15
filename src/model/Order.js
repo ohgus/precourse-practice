@@ -87,6 +87,18 @@ class Order {
       this.#price += ALL_MENU[menu].price * Number(quantity);
     });
   }
+
+  getOrders() {
+    return this.#orders;
+  }
+
+  getPrice() {
+    return this.#price;
+  }
+
+  getCategoryCount() {
+    return this.#category;
+  }
 }
 
 export default Order;
