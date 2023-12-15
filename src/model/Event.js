@@ -9,6 +9,7 @@ class Event {
   constructor(category, price, date) {
     this.#event = Array.from({ length: 5 }, (value) => false);
     this.#eventDiscount = Array.from({ length: 5 }, (value) => 0);
+    this.#allDiscount = 0;
     this.#checkMyEvent(category, price, date);
   }
 
